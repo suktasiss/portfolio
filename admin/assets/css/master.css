@@ -1,0 +1,259 @@
+/* Common */
+
+body{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+a{
+	color: #04396C;
+	font-size: 1.2em;
+	font-weight: 300;
+}
+
+
+a:hover{
+	text-decoration: none;
+	color: #fc031c;
+}
+
+h1{
+	color: #8e8e93;
+	font-weight: 400;
+	margin-left: 30px;
+	padding-top: 20px;
+	border: 0;
+	font-size: 1.9em;
+}
+
+
+/* Hide buttons in number input: ; */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+
+/* content */
+
+.page-title-inner{
+	height: 80px;
+	width: 100%;
+}
+
+.table-outer{
+	margin: 20px 30px 0 30px;
+	font-size: 0.8em;
+	line-height: 15px;
+}
+
+
+.content{
+	display: inline-block;
+	padding: 0;
+}
+
+
+
+/*header*/
+
+header{
+	height: 48px;
+	border-bottom: solid 1px #8e8e93;
+}
+
+header li{
+	padding-top: 10px;
+}
+
+
+.title{
+	font-size: 1.7em;
+	padding: 0;
+	margin-left: -5px;
+	color: #8e8e93;
+}
+
+
+
+.title:first-child{
+	border-right: solid 1px #8e8e93;
+	font-weight: 250;
+}
+
+.title:first-child a{
+	margin-left: 20px;
+}
+
+.title-text{
+	float: right !important;
+	padding-right: 20px;
+}
+
+.dropdown{
+	color: #fff;
+}
+
+
+
+/* buttons */
+
+.btn-group{
+	height: 30px;
+}
+
+/*sidebar */
+
+
+
+.navbar{
+	padding: 0;
+	padding-left: 10px;
+}
+
+.sidebar{
+	color: #fff;
+	border-right: solid 1px #8e8e93;
+
+	padding: 0;
+	min-height: calc(100vh - 50px);
+}
+
+
+.sidebar ul{
+	padding-left: 5px;
+	width: 100%;
+}
+
+.icon{
+	margin-bottom: -20px;
+	margin-left: 15px;
+	padding: 0;
+
+}
+
+.list-item{
+	margin-left: 8px;
+	font-size: 0.9em;
+	margin-top: 5px;
+}
+
+
+.sidebar li{
+	line-height: 20px;
+	border-bottom: solid 1px #8e8e93;
+}
+
+.dashboard-item{
+	margin-left: 20px;
+	margin-top: 20px;
+	border-bottom: solid 1px #8e8e93;
+	width: 40%;
+}
+
+/* add */
+
+.form-title{
+	margin-bottom: 20px;
+}
+
+.form-outer{
+	width: 70%;
+	margin-left: 70px;
+	margin-bottom: 20px;
+	margin-top: 40px;
+	padding: 20px 20px 0 20px;
+}
+
+
+
+.form-item{
+	font-size: 0.8em;
+	display: block;
+}
+
+.button-form{
+	
+	display:inline-block;
+	padding:0.3em 1.2em;
+	margin:1.5em 0.3em 0.3em 0;
+	border-radius:2em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'Roboto',sans-serif;
+	font-weight:300;
+	background-color:#4eb5f1;
+	text-align:center;
+	transition: all 0.2s;
+}
+
+.button-form:hover{
+	background-color:#4095c6;
+}
+
+.form-inner{
+	width: 100%;
+}
+
+/* sidebar-menu */)
+
+
+.sidebar{
+	position: relative;
+}
+
+.list-outer{
+	position: absolute;
+	width: 100%;
+}
+
+.down:after {
+  margin-left: 8px;
+}
+
+
+.topmenu li a:hover { 
+	color: #E6855F; 
+}
+
+.topmenu li{
+	max-height: 80px;
+}
+
+.submenu li{
+	border-bottom: none !important;
+}
+	
+.submenu {
+  background: white;
+  position: relative;
+  left: 0;
+  visibility: hidden;
+  transform: perspective(600px) rotateX(-70deg);
+  transition: .6s ease-in-out;
+  font-size: 0.8em;
+  margin-top: 3px;
+  margin-left: 10px;
+  padding-right: 150px;
+}
+
+.popup-root{
+  margin-left: 50px;
+}
+
+.topmenu > li:hover .submenu{
+  visibility: visible;
+  transform: perspective(600px) rotateX(0deg);
+}
+
+

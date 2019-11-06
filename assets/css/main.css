@@ -1,0 +1,446 @@
+
+/* fonts */
+
+@font-face {
+    font-family: 'Tahoma';
+    src: url('../fonts/tahoma.ttf');
+}
+
+
+
+/* Common */
+
+body, html{
+  width: 100%;
+  height: 100%;
+
+
+  background: #261e2b; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #261e2b 0%, #261e2b 44%, #232a30 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  #261e2b 0%,#261e2b 44%,#232a30 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  #261e2b 0%,#261e2b 44%,#232a30 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#261e2b', endColorstr='#232a30',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-attachment: fixed;
+}
+
+
+
+
+
+div img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Hide buttons in number input: ; */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+/* items */
+
+.movie-poster{
+  padding: 5px;
+  object-fit: contain;
+}
+
+.movie-poster img{
+  height: 500px;
+}
+
+.movie-item {
+  margin-bottom: 5px;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+.movie-item img{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+/* movie */
+
+.container-fluid p{
+  color: #fff;
+  margin-bottom: 0.5em;
+  font-family: 'Tahoma', sans-serif;
+  font-weight: 500;
+}
+
+.movie_title{
+  font-size: 2em;
+  margin-bottom: 1px;
+  margin-left: 24px;
+  margin-top: 20px;
+}
+
+.pg-genre, .cast, .synopsis, .cinema{
+  margin-left: 14px;
+}
+
+.cast{
+  font-size: 0.8em;
+  margin-top: -35px;
+}
+
+.cinema{
+  margin-top: 30px;
+}
+
+
+.movie_genre{
+  font-size: 1em;
+}
+
+
+.pg-genre{
+  margin-top: -15px;
+  margin-bottom: 30px;
+}
+
+.sqr{
+  border-radius: 7px;
+  background-color: rgb(216,106,78);
+  width:25px;
+  height: 19px;
+  text-align: center;
+  margin-right: 8px;
+  margin-top: 3px;
+  margin-left: 7px;
+}
+
+.sqr-time-outer{
+  margin-top: 30px;
+  margin-left: 15px;
+}
+
+.sqr-time{
+  border-radius: 10px;
+  background-color: rgb(225, 140, 68);
+  
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  text-color: #fff;
+}
+
+.sqr-time:hover{
+  background-color: rgb(250, 110, 200);
+}
+
+.sqr-time-outer a{
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.sqr-time a:hover{
+  color: #fff;
+}
+
+.sqr p{
+  margin-top: 1px ;
+  font-size: 0.6em;
+}
+
+.theater p{
+  font-size: 1.3em;
+}
+
+.theater-outer{
+  border-bottom: solid 1px rgb(250, 110, 200); 
+  color: #fff;
+  margin-bottom: 2px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  width: 80%;
+}
+
+.address{
+  margin-top: -16px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+
+.day{
+  margin-bottom: -10px;
+}
+
+.day p{
+  font-size: 1.2em;
+}
+
+
+
+
+/* navbar */
+
+
+.navbar{
+    margin-bottom: 20px;   
+    padding: 0 auto 0 auto; 
+    height: 45px;
+    background-color: #140a1c;    
+}
+
+
+
+
+.logo img{
+  margin-bottom: 6px;
+}
+
+
+.title{
+  margin-left: 10px;
+}
+
+
+.navbar a{
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.3em;
+  color: #fff;
+}
+
+.navbar li{
+  list-style-type: none;
+  padding-top: 10px;
+}
+
+.dropdown-menu{
+  background-color: #000;
+  width: 1px;
+}
+
+
+
+.enter a {
+  font-size: 1em;
+}
+
+.enter{
+  margin-right: 10px;
+}
+
+
+
+.navbar-collapse{
+  padding-left: 50px;
+}
+
+.navbar-nav{
+  text-align: center;
+}
+
+
+
+
+/* Footer */ 
+
+
+.footer-copyright, .footer-copyright a{
+  background-color: #212121;
+  font-size: 0.8em;
+  line-height: 50%;
+}
+
+.social{
+  margin:auto;
+  max-width: 400px;
+}
+
+.social-item{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
+footer h5{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+footer, footer a {
+      color: #fff;
+  }
+
+
+footer{
+  margin-top: 2.5rem;
+  clear: both;
+  position: relative;
+  height: 20px
+  margin-top: -20px;
+}
+
+
+
+/* Common */
+
+
+a:hover{
+  text-decoration: none;
+  color: #fc031c;
+} 
+
+/* purchase - form */
+
+.address-form{
+  font-size: 0.8em;
+  margin-bottom: 20px;
+}
+
+
+.purchase-form{
+  margin-top: 20px;
+  width: 100%;
+  color: #fff;
+}
+
+.purchase{
+  padding: 30px 30px 30px 60px;
+  border: solid 1px;
+  width: 80%;
+}
+
+
+
+.quantity{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.free{
+  margin-top: 20px;
+}
+
+.theater-form{
+  margin-left: 2px;
+  padding-top: 10px;
+  font-size: 1.4em;
+  line-height: 0.8;
+}
+
+
+
+.button-form {
+  width: 170px;
+  margin-top: 50px;
+  height: 35px;
+  text-decoration: none;
+  padding-top: 7px;
+  color: #a675b3;
+  line-height: 25px;
+  display: inline-block;
+  font: normal 17px arial;
+  padding-right: 5px;
+}
+
+
+
+.button-form:not(.active) {
+  box-shadow: inset 0 1px 1px rgba(111, 55, 125, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(0, 0, 0, 0.3), 0 4px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px #150a1e;
+  background-image: linear-gradient(#3b2751, #271739);
+  text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 -1px 0 #311d47;
+}
+
+.button-form:not(.active):hover,
+.button-form:not(.active):focus {
+  transition: color 200ms linear, text-shadow 500ms linear;
+  color: #fff;
+  text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 0 10px rgba(223, 206, 228, 0.4), 0 0 2px #2a153c;
+}
+.button-form:not(:hover) {
+    transition: 0.6s;
+}
+
+.select-form{
+  font-size: 0.8em;
+  max-width: 80%;
+  background-color: #140a1c;
+  color: #fff;
+}
+
+.pay-type{
+  margin-top: 20px;
+}
+
+
+/* Register */
+
+
+
+#register_form h1 {
+  text-align: center;
+  font-size: 1.7em;
+  color: #fff;
+  margin-top: 15px;
+}
+
+
+#register_form {
+  width: 37%;
+  margin: 100px auto;
+  padding-bottom: 30px;
+  border: 1px solid #918274;
+  border-radius: 5px;
+  background-color: #140a1c;
+}
+
+#register_form input {
+  width: 80%;
+  height: 35px;
+  margin: 5px 10%;
+  font-size: 1.1em;
+  padding: 4px;
+  font-size: .9em;
+}
+
+
+.form_error span {
+  width: 80%;
+  margin: 1px 10%;
+  font-size: 0.9em;
+  color: #D83D5A;
+}
+.form_error input {
+  border: 1px solid #D83D5A;
+}
+
+.btn-cont{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*Styling in case no errors on form*/
+.form_success span {
+  width: 80%;
+  margin: 1px 10%;
+  font-size: 0.9em;
+  color: green;
+}
+.form_success input {
+  border: 1px solid green;
+}
+#error_msg {
+  color: red;
+  text-align: center;
+  margin: 10px auto;
+}
