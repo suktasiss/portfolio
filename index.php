@@ -1,12 +1,12 @@
-<?php include('includes/header.php');?>
+<?php include('includes/header.php');
+  $movies=mysqli_query($con,"select * from movies");
+?>
 
 	<div id="main">
       <div class="container-fluid">
       <div class="flex-wrap row">
         
         <?php 
-          $movies=mysqli_query($con,"select * from movies");
-          
           while($item=mysqli_fetch_array($movies))
           {
           ?>

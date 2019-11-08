@@ -1,7 +1,9 @@
 <?php 
-  include('includes/header.php');
-  include("includes/seance.php");
-  include('includes/seances.php');
+  require_once 'includes/header.php';
+  require_once 'includes/seance.php';
+  require_once 'includes/seances.php';
+
+
   $movie_id = intval($_GET['id']);
   $movierow=mysqli_query($con,"select * from movies where id=$movie_id");
   $movie=mysqli_fetch_array($movierow);
@@ -56,8 +58,8 @@
                                 foreach($datesArr as $date) {
                                   ?> 
                                   <div class="day">
-                                    <p><?php echo(ltrim($date->getDay($date->timestamp),'0') . " " . 
-                                    Seances::monthByNumber(ltrim($date->getMonth($date->timestamp)),'0')); ?> </p>
+                                    <p><?php echo(ltrim(Date::getDay($date->timestamp),'0') . " " . 
+                                    Date::monthByNumber(ltrim(Date::getMonth($date->timestamp)),'0')); ?> </p>
                                   </div>
                                   <div class="row"> 
                                   <?php
@@ -66,7 +68,7 @@
                                                <a href="purchase.php?id=<?= $seance->id;?>&theater=<?= $theater_id;?>">
                                               <div class="sqr-time">
                                              
-                                              <?=Seances::getTime($seance->time);?>
+                                              <?=Date::getTime($seance->time);?>
                                               
                                               </div> 
                                             </a>

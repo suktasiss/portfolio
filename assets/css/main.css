@@ -444,3 +444,17 @@ a:hover{
   text-align: center;
   margin: 10px auto;
 }
+
+/* Purchases */
+
+.purchase {
+  margin-left: 80px;
+}
+
+.purchase-poster{
+  margin-bottom: 20px;
+}
+
+.purchase-title{
+  font-size: 1.4em;
+}

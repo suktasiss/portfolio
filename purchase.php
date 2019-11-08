@@ -1,7 +1,9 @@
 <?php 
   include('includes/header.php');
   include('includes/login-check.php');
-  include('includes/seances.php');
+  include('includes/date.php');
+
+
   login_check(true);
   $id = intval($_GET['id']);
   $theater_id = intval($_GET['theater']);
@@ -15,9 +17,9 @@
   $theaterrow=mysqli_query($con,"select * from theaters where id=$theater_id");
   $theater = mysqli_fetch_array($theaterrow);
 
-  $day = Seances::getDay($seance['showtime']);
-  $month = Seances::getMonth($seance['showtime']);
-  $time = Seances::getTime($seance['showtime']);
+  $day = Date::getDay($seance['showtime']);
+  $month = Date::getMonth($seance['showtime']);
+  $time = Date::getTime($seance['showtime']);
 
   ?>
   	<div id="main">
@@ -54,7 +56,7 @@
                               </div>
 
                               <div class="day">
-                                <?php echo($day . " " . Seances::monthByNumber($month)) . " в " . $time; ?>
+                                <?php echo($day . " " . Date::monthByNumber($month)) . " в " . $time; ?>
                               </div>
                               
                               <div class="free">
