@@ -1,4 +1,5 @@
-  <?php include('includes/header.php');
+<?php 
+    require_once 'includes/header.php';
     $seances=mysqli_query($con,"select * from seances"); 
     $moviesraw=mysqli_query($con,"select * from movies"); 
     $movies = array();

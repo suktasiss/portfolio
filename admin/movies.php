@@ -1,5 +1,6 @@
-
-  <?php include('includes/header.php');?>
+<?php 
+    require_once 'includes/header.php';
+?>
   <a hidden id="table">movies</a>
 
     <div class="container-fluid row justify-content-end">

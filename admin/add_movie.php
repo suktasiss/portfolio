@@ -1,4 +1,5 @@
-  <?php include('includes/header.php');?>
+  <?php 
+  require_once 'includes/header.php';?>
 
     <div class="container-fluid row justify-content-end">
       <?php include('includes/sidebar.php');?>

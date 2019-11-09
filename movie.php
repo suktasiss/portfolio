@@ -38,10 +38,7 @@
                         <p><?= $movie['synopsis'] ?></p>
                       </div>
 
-                      <div class="cinema">
-                          
-
-                          
+                      <div class="cinema">     
                           
                           <?php while($item=mysqli_fetch_array($theatersraw)){ ?>
                               <div class="theater-outer">

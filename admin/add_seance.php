@@ -1,7 +1,8 @@
-  <?php include('includes/header.php');
+<?php 
+    require_once 'includes/header.php';
     $hallsraw = mysqli_query($con,"select * from halls");
     $movieraw = mysqli_query($con,"select * from movies");
-  ?>
+?>
 
     <div class="container-fluid row justify-content-end">
       <?php include('includes/sidebar.php');?>

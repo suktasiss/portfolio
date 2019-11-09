@@ -1,8 +1,10 @@
-<?php include('includes/header.php');
+<?php
+    require_once 'includes/header.php';
+
 	$movies = getEntryNumber('movies',$con);
 	$seances = getEntryNumber('seances',$con);
 	$theaters = getEntryNumber('theaters',$con);
-  $halls = getEntryNumber('halls',$con);
+    $halls = getEntryNumber('halls',$con);
 	$users = getEntryNumber('users',$con);
 	$logs = getEntryNumber('user_history',$con);
 
@@ -17,7 +19,7 @@
 
   
   <div class="container-fluid row justify-content-end">
-  	<?php include('includes/sidebar.php');?>
+  	<?php require_once 'includes/sidebar.php';?>
   	<div class="col-md-10 content">
   		<div class="dashboard-item">
   			<?= "Фильмов в базе: $movies" ?>

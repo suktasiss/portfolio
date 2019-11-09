@@ -1,6 +1,6 @@
 <?php
 	session_start();
-    include('includes/config.php');
+    require_once 'includes/config.php';
     extract($_POST);
     $password = md5($password);
     $arr = mysqli_query($con,"select * from admins where login='$login' and password='$password'");

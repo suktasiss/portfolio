@@ -1,7 +1,7 @@
 <?php
-	session_start();
-    include('includes/config.php');
-    include('includes/regexp.php');
+    session_start();
+    include 'includes/config.php';
+    include 'includes/regexp.php';
     extract($_POST);
     $password = md5($password);
 
@@ -11,7 +11,7 @@
 
     $arr = mysqli_query($con,"select * from users where login='$login' and password='$password'");
 
-    $obj = mysqli_fetch_array($arr);
+    $obj = mysqli_fetch_assoc($arr);
     $userId = $obj['id'];
     if($obj > 0){
     	$_SESSION['user'] = $obj['login'];

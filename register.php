@@ -1,7 +1,8 @@
-<?php include('includes/header.php');
-  include('includes/login-check.php');
+<?php 
+  require_once 'includes/header.php';
+  require_once 'includes/login-check.php';
   login_check(false);
-  include('process.php');?>
+  require_once 'process.php';?>
 	
       <form id="register_form">
           <h1>Регистрация</h1>

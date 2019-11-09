@@ -1,40 +1,42 @@
-  <?php include('includes/header.php');?>
+<?php 
+  require_once 'includes/header.php';
+?>
   <a hidden id="table">users</a>
 
     <div class="container-fluid row justify-content-end">
-      <?php include('includes/sidebar.php');?>
-      <div class="col-md-10 content">
-        <div class="page-title-outer">
-          <div class="page-title-inner">
-            <h1>Пользователи</h1>
+        <?php include('includes/sidebar.php');?>
+        <div class="col-md-10 content">
+          <div class="page-title-outer">
+            <div class="page-title-inner">
+              <h1>Пользователи</h1>
+            </div>
           </div>
-        </div>
-        
-        <div class="table-outer">
-          <table id="editableTable" class="table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Логин</th>
-                <th>Дата создания</th>
-                <th>Контактный номер</th>                        
-              </tr>
-            </thead>
-            <tbody>
-              <?php  
-              $movies=mysqli_query($con,"select * from users "); 
-              while( $item = mysqli_fetch_array($movies) ) { ?>
-                 <tr id="<?= $item['id'] ?>">
-                 <td><?= $item ['id'] ?></td>
-                 <td><?= $item ['login'] ?></td>
-                 <td><?= $item ['created_at'] ?></td>
-                 <td><?= $item ['contact_number'] ?></td>                         
-                 </tr>
-              <?php } ?>
-            </tbody>
-          </table>
-        </div>
-    </div>
+          
+          <div class="table-outer">
+            <table id="editableTable" class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Логин</th>
+                  <th>Дата создания</th>
+                  <th>Контактный номер</th>                        
+                </tr>
+              </thead>
+              <tbody>
+                <?php  
+                $movies=mysqli_query($con,"select * from users "); 
+                while( $item = mysqli_fetch_array($movies) ) { ?>
+                   <tr id="<?= $item['id'] ?>">
+                   <td><?= $item ['id'] ?></td>
+                   <td><?= $item ['login'] ?></td>
+                   <td><?= $item ['created_at'] ?></td>
+                   <td><?= $item ['contact_number'] ?></td>                         
+                   </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+          </div>
+      </div>
     </div>
     
       

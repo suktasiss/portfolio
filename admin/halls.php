@@ -1,4 +1,6 @@
-  <?php include('includes/header.php');
+  <?php 
+    require_once 'includes/header.php';
+    
     $movies=mysqli_query($con,"select * from halls;"); 
     $theatersraw=mysqli_query($con,"select * from theaters;"); 
     $theaters = array();
@@ -9,7 +11,7 @@
   <a hidden id="table">halls</a>
 
     <div class="container-fluid row justify-content-end">
-      <?php include('includes/sidebar.php');?>
+      <?php require_once 'includes/sidebar.php';?>
       <div class="col-md-10 content">
         <div class="page-title-outer">
           <div class="page-title-inner">
