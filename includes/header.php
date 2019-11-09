@@ -70,6 +70,9 @@
                     <div class="button-popup">
                       <button type="button" class="button-form" id="log_btn">Войти</button>
                     </div>
+                    <div class="nologin">
+                      <a href="register.php">регистрация</a>
+                    </div>
                     
                     
                   </form>
