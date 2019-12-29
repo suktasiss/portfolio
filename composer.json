@@ -1,0 +1,7 @@
+{
+    "name": "johan/mbs",
+    "require": {
+	"twig/twig":"^3.0",
+	"phroute/phroute": "^2.1"
+    }
+}

@@ -3,7 +3,8 @@
 	// Класс предоставляет методы и константы для работы с датами и 
 	// строками в формате timestamp
 
-	class Date{
+	class Date
+	{
 		const REGEXPTIME = "/..:../";
     	const REGEXPDAY = "/([0-9]{2}) /";
   		const REGEXPMONTH = "/-([0-9]{2})-/";
@@ -27,12 +28,11 @@
 
     	public static function getTime($timestamp){
 	      preg_match(self::REGEXPTIME, $timestamp,$matches);
-	      return $matches[0];
+	      return ltrim($matches[0],'0');
 	    }
 
 	    public static function getDate($timestamp){
 	      preg_match(self::REGEXPDATE, $timestamp, $matches);
-	      return $matches[0];
+	      return ltrim($matches[0],'0');
 	    }
 	}
-?>

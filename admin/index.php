@@ -1,6 +1,11 @@
 <?php
-  include('includes/config.php');
-  session_start();
+require_once 'includes/config.php';
+require_once 'includes/login-check.php';
+session_start();
+
+if(isset($_SESSION['admin']) && strlen($_SESSION['admin'])!=0)
+    header("Location: dashboard.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +24,7 @@
   
   <h2 class="login-header">Log in</h2>
 
-  <form action="login-handler.php" method="post" class="login-container">
+  <form action="includes/login-handler.php" method="post" class="login-container">
     <p><input type="text" name="login" placeholder="Email"></p>
     <p><input type="password" name="password" placeholder="Password"></p>
      <button type="submit" class="btn btn-primary">Login</button>

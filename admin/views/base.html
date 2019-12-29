@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/master.css">
+    <link rel="stylesheet" href="https://use.typekit.net/gud4xsb.css">
+    <link rel="stylesheet" href="assets/css/popup.css">
+
+  </head>
+  <body>
+
+    <header>
+      <div class="container-fluid">
+	<div class="row">
+          <div class="title col-md-2">
+            <a href="dashboard.php">ADMIN</a>
+          </div>
+          
+          <div class="title align-self-center col-md-9">
+            <div class="title-text d-xl-block d-sm-none">
+              MOVIE BOOKING SYSTEM
+            </div>    
+          </div>
+
+          <div class="row enter align-self-center">
+            {% if admin|length > 0 %}
+            <ul>
+              <li class="dropdown"> 
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ admin }}</a>
+                <ul class="dropdown-menu">
+                  <li><a href="includes/logout.php">Выйти</a></li>
+                </ul>
+            </ul>
+            {% else %}
+            
+            <div class="main">
+              <div class="panel">
+                <a href="#login_form" id="login_pop">Войти</a>
+              </div>
+
+            </div>
+
+
+            {% endif %}
+
+            <a href="#" class="overlay" id="login_form"></a>
+            
+
+          </div>
+	</div>
+      </div>
+    </header>
+
+    <div class="container-fluid row justify-content-end">
+
+      <div class="col-md-2 sidebar">
+	<div class="list-outer">
+          <ul class="topmenu">
+            <li>
+              <a href="#" class="down">
+		<div class="row item">
+                  <div class="icon">
+                    <img src="assets/images/film.png" width="35" height="35" alt="session">
+                  </div>
+                  <div class="list-item popup-root">
+                    Фильмы
+                  </div>
+                  <ul class="submenu">
+                    <li><a href="movies.php">Мониторинг</a></li>
+                    <li><a href="add_movie.php">Добавить</a></li>
+                  </ul>
+		</div>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="down">
+
+		<div class="row item">
+                  <div class="icon">
+                    <img src="assets/images/theater.png" width="30" height="30" alt="theater">
+                  </div>
+                  <div class="list-item popup-root">
+                    Кинотеатры
+                  </div>           
+                  <ul class="submenu">
+                    <li><a href="theaters.php">Мониторинг</a></li>
+                    <li><a href="add_theater.php">Добавить</a></li>
+                  </ul>   
+
+		</div>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="down">
+		<div class="row item">
+                  <div class="icon">
+                    <img src="assets/images/hall.png" width="25" height="25" alt="hall">
+                  </div>
+                  <div class="list-item popup-root">
+                    Залы
+                  </div> 
+                  <ul class="submenu">
+                    <li><a href="halls.php">Мониторинг</a></li>
+                    <li><a href="add_hall.php">Добавить</a></li>
+                  </ul>
+                  
+		</div>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="down">
+		<div class="row item">
+                  <div class="icon">
+                    <img src="assets/images/ticket.png" width="25" height="25" alt="ticket">
+                  </div>
+                  <div class="list-item popup-root">
+                    Сеансы
+                  </div> 
+                  <ul class="submenu">
+                    <li><a href="seances.php">Мониторинг</a></li>
+                    <li><a href="add_seance.php">Добавить</a></li>
+                  </ul>
+                  
+		</div>
+              </a>
+            </li>
+
+            <li>
+              <a href="users.php">
+		<div class="row item">
+                  <div class="icon">
+                    <img src="assets/images/user.png" width="25" height="25" alt="user">
+                  </div>
+                  <div class="list-item">
+                    Пользователи
+                  </div> 
+                  
+		</div>
+              </a>
+            </li>
+
+            <li>
+              <a href="logs.php">
+		<div class="row item">
+                  <div class="icon">
+                    <img src="assets/images/history.png" width="28" height="28" alt="history">
+                  </div>
+                  <div class="list-item">
+                    Логи 
+                  </div> 
+                  
+		</div>
+              </a>
+            </li>
+
+          </ul>
+	</div>
+      </div>
+
+      {% block content %} {% endblock %}
+    </div>
+
+
+    <!-- Bootstrap -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    {% block js %} {% endblock %}    
+  </body>
+</html>

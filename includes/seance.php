@@ -1,24 +1,24 @@
 <?php
-class Seance{
-	private $id;
-	private $time;
+
+// Класс является полезной абстракции для хранения даты и работы с ней
+
+
+require_once 'date.php';
+
+class Seance
+{
+	public $id;
+	public $time;
 
 	function __construct($time, $id) {
       $this->time = $time;
       $this->id = $id;
     }
 
-    function __get($index){
-    	return $this->$index;
+
+    
+    function getTime(){
+        return Date::getTime($this->time);
     }
 
-    function __set($index,$value){
-    	if(isset($this->$index))
-    		$this->$index = $value;
-    	else{
-    		error_log("h");
-    		throw new Exception("Атрибут $index не существует");
-    	}
-    }
 }
-?>

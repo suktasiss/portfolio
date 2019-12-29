@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="col-md-10 content">
+  <div class="dashboard-item">
+    Фильмов в базе: {{ movies }}
+  </div>
+  <div class="dashboard-item">
+    Сеансов в базе: {{ seances }}
+  </div>
+  <div class="dashboard-item">
+    Кинотеатров в базе: {{ theaters }}
+  </div>
+  <div class="dashboard-item">
+    Залов в базе: {{ halls }}
+  </div>
+  <div class="dashboard-item">
+    Пользователей в базе: {{ users }}
+  </div>
+  <div class="dashboard-item">
+    Логов записано: {{ logs }}
+  </div>
+</div>
+
+{% endblock %}

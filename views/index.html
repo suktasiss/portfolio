@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="main">
+  <div class="container-fluid">
+    <div class="flex-wrap row">
+      {% for item in movies%}
+      <div class="movie-item col-md-3 col-sm-6">
+	<a href="movie.php?id={{ item.id }}"><img src="{{ item.poster }}"></a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

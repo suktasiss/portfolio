@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="main">
+  <div class="container-fluid clear-top">
+    <div class="flex-wrap row"> 
+      <div class="movie-poster col-md-3 col-sm-6">
+	<img src="{{ movie.poster }}">
+      </div>
+
+
+      <div class="col-md-8 movieinfo">
+	<div class="movie_title">
+          <p>{{ movie.title }}</p>
+	</div>
+	<div class="row pg-genre">
+	  <div class="sqr">
+            <p>{{ movie.age }}+</p>
+	  </div>
+	  <div class="movie_genre">
+            <p>{{ movie.categories }}</p>
+	  </div>
+	</div>
+
+	<div class="purchase-form">
+	  <form action="includes/purchase-process.php" method="post">
+	    <div class="purchase">
+	      <input type="hidden" value="{{ seance.id }}" name="id">
+
+	      <div class="theater-form">
+                {{ theater.name }}
+	      </div>
+	      <div class="address-form">
+                {{ theater.address }}
+	      </div>
+
+	      <div class="day">
+                {{ date}}
+	      </div>
+	      
+	      <div class="free">
+                Свободных мест: {{ seance.free_space }}
+	      </div>
+
+	      <div class="quantity">
+		Количество
+	      </div>
+
+	      <div>
+		<select name="quantity" class="select-form"> 
+                  {% for i in 1..max %}
+                  <option value="{{ i }}" >{{ i }}</option> 
+                  {% endfor %}
+		</select> 
+	      </div>
+
+	      <div class="pay-type">
+		<input type="radio" id="webMoney"
+		       name="pay" value="webmoney" required="">
+		<label for="webMoney">WebMoney</label>
+
+		<input type="radio" id="card"
+		       name="pay" value="card">
+		<label for="card">Банковская карта</label>
+
+		<input type="radio" id="qiwi"
+		       name="pay" value="qiwi">
+		<label for="qiwi">Qiwi-кошелёк</label>
+	      </div>
+
+	      
+	      <button id="valid" class="button-form" type="submit">Подтвердить</button>
+	    </div>
+	  </form>
+	</div>
+	
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

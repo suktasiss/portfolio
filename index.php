@@ -1,26 +1,11 @@
-<?php 
-  require_once 'includes/header.php';
-  $movies=mysqli_query($con,"select * from movies");
-?>
+<?php
+require_once 'includes/twig.php';
 
-	<div id="main">
-        <div class="container-fluid">
-            <div class="flex-wrap row">
-        
-            <?php 
-            while($item=mysqli_fetch_array($movies))
-            {
-                ?>
-            <div class="movie-item col-md-3 col-sm-6">
-                <a href="movie.php?id=<?= $item['id'];?>"><img src="<?= $item['poster'];?>"></a>
-            </div>
-        <?php
-        }
-        ?>
-            </div>
-        </div>
-    </div>
+$template = $twig->load('index.html');
+$movies=mysqli_query($con,"select * from movies");
+$arr = array();
+while($item = mysqli_fetch_array($movies)){
+    array_push($arr,$item);
+}
 
-<?php 
-    include('includes/footer.php');
-?>
+echo $template->render(['movies' => $movies, 'user' => $user, 'title' => 'Кино']);

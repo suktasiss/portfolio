@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<a hidden id="table">user_history</a>
+
+
+<div class="col-md-10 content">
+  <div class="page-title-outer">
+    <div class="page-title-inner">
+      <h1>История пользователей</h1>
+    </div>
+  </div>
+  
+  <div class="table-outer">
+    <table id="editableTable" class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>id пользователя</th>
+          <th>Событие</th>
+          <th>Время</th>                        
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+        <tr id="{{ item.id }}">
+          <td>{{ item.id }}</td>
+          <td>{{ item.user_id }}</td>
+          <td>{{ item.event }}</td>
+          <td>{{ item.happened_at }}</td>                         
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block js %}
+
+
+<!-- Editable -->
+
+<script src="js/editable.js"></script>
+<script src="plugin/bootstable.js"></script>
+
+
+</script>
+
+{% endblock %}

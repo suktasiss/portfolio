@@ -1,5 +1,5 @@
 <?php
-require_once("includes/config.php");
+require_once("config.php");
 
 if ($_POST['id'] && $_POST['table']) {
 
@@ -11,4 +11,3 @@ if ($_POST['id'] && $_POST['table']) {
     );
     echo json_encode($data);    
 }
-?>

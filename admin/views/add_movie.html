@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="col-md-10 content">
+  <div class="page-title-outer">
+    <div class="page-title-inner">
+      <h1>Добавление фильма</h1>
+    </div>
+  </div>
+  
+  <div class="form-outer">
+    <div class="form-title">
+      Добавить фильм
+    </div>
+    <form action="includes/add_item.php" method="POST">
+      <input type="hidden" value="movies" name="table">
+      <div class="form-item">
+        <label for="title">Название</label>
+        <input class="form-inner" type="text" name="title" value="" required=""/>
+      </div>
+      <div class="form-item">
+        <label for="categories">Жанры</label>
+        <input class="form-inner" type="text" name="categories" value="" required="" 
+               pattern="^([а-я,А-Я]*, )+.*$"/>
+      </div>
+      <div class="form-item">
+        <label for="age">Возраст</label>
+        <input class="form-inner" type="number" name="age" value="" max="21" required="" />
+      </div>
+      <div class="form-item">
+        <label for="release_date">Дата выхода</label>
+        <input class="form-inner" type="text" name="release_date" placeholder="1997-01-12" required="" pattern="^([0-9]{2,4})-([0-1][0-9])-([0-3][0-9])$" />
+      </div>
+      <div class="form-item">
+        <label for="synopsis">Синопсис</label>
+        <textarea class="form-inner" type="text" name="synopsis"></textarea>
+      </div>
+      <div class="form-item">
+        <label for="cast">Актёры</label>
+        <input class="form-inner" type="text" name="cast" placeholder="Имена актёров через запятую" required="" pattern="^([а-я А-Я]*, )+.*$" />
+      </div>
+      <div class="form-item">
+        <label for="poster">Постер</label>
+        <input class="form-inner" type="text" name="poster" placeholder="assets/images/image.jpg" required="" pattern="assets/images/.*(jpg|png)" />
+      </div>
+      <button id="valid" class="button-form" type="submit">Добавить</button>
+    </form>
+  </div>
+  
+</div>
+
+
+
+{% endblock %}
+
+{% block js %}
+
+
+<!-- Validation -->
+
+<script src="js/validation.js"></script>
+
+</script>
+
+
+{% endblock %}

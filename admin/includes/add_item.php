@@ -1,5 +1,5 @@
 <?php 
-	require_once 'includes/config.php';
+	require_once 'config.php';
 	extract($_POST);
 
 	switch($table){
@@ -23,6 +23,4 @@
 			break;
 		}
 	}
-    header('location:dashboard.php');	
-
-?>
+    header('location:../dashboard.php');

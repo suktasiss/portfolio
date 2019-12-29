@@ -1,26 +1,32 @@
 <?php
 
-/* class Seance includes 2 fields - $timestamp - contains data of seances
-   timeArr - contains array of strings which contain  */
+/* В классе Сеанс 2 поля, $timestamp - хранит дату сеансов
+timeArr - хранит массив строк содержащих время сеанса на данную дату*/
 
 require_once 'date.php';
 
-class Seances{
+class Seances
+{
 
     public $timestamp;
-    public $timeArr = array(); 
+    public $timeArr = array();
+    public $date;
 
-    function __construct($timestamp) {
+    function __construct($timestamp)
+    {
       $this->timestamp = $timestamp;
+      $this->dateCreate();
     }
 
     
 
-    public function addTime($time){
+    public function addTime($time)
+    {
       array_push($this->timeArr,$time);
     }
 
-    public function sameDate($timestamp){
+    public function sameDate($timestamp)
+    {
       preg_match(Date::REGEXPDATE, $this->timestamp,$self);
       preg_match(Date::REGEXPDATE, $timestamp,$outer);
       if($self[0] == $outer[0])
@@ -31,9 +37,10 @@ class Seances{
 
     
 
-    /* Constructs seance array  */
+    /* Осуществляет запрос к БД и получает сеансы по нужному фильму в выбранном кинотеатре, возвращает массив сеансов  */
 
-    function constructData($theater_id, $con, $movie_id){
+    function constructData($theater_id, $con, $movie_id)
+    {
       $seancesraw=mysqli_query($con,"select * from seances where movie_id=$movie_id and hall_id in(select id from halls where theater_id=$theater_id) order by showtime");
       $datesArr = array();
       $dateObj = null;
@@ -45,6 +52,7 @@ class Seances{
             array_push($datesArr,$dateObj);
             $dateObj = new Seances($row['showtime']);
           }
+          
           $dateObj->addTime(new Seance(Date::getTime($row['showtime']), $row['id']));
       }
 
@@ -52,6 +60,13 @@ class Seances{
         array_push($datesArr,$dateObj);
       return $datesArr;
     }
-  }
 
-  ?>
+
+    
+    public function dateCreate()
+    {
+        $this->date = ltrim(Date::getDay($this->timestamp) . " " . Date::monthByNumber(Date::getMonth($this->timestamp)),'0');
+    }
+
+
+ }

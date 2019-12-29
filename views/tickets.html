@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="container-fluid">
+    <div class="flex-wrap">
+      {% for item in items %}
+	<div class="row col-md-6">
+	  <div class="purchase-poster col-md-6">
+            <img src="{{ item.poster }}" alt="">
+	  </div>
+	  <div class="items">
+            <div class="purchase-title">
+              <p>{{ item.title }}</p>
+            </div>
+
+            <div class="purchase-showtime">
+              <p>{{ item.showtime }}</p>
+            </div>
+
+            <div class="purchase-quantity">
+              <p>Билетов: {{ item.quantity }}</p>
+            </div>
+	  </div>
+	</div>
+      {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="main">
+  <div class="container-fluid clear-top">
+    <div class="flex-wrap row"> 
+      <div class="movie-poster col-md-3 col-sm-6">
+        <img src="{{ movie.poster }}">
+      </div>
+      <div class="col-md-8 movieinfo">
+        <div class="movie_title">
+          <p> {{ movie.title }} </p>
+        </div>
+        <div class="row pg-genre">
+          <div class="sqr">
+            <p>{{ movie.age }}+</p>
+          </div>
+          <div class="movie_genre">
+            <p>{{ movie.categories }}</p>
+          </div>
+        </div>
+        
+        <div class="cast">
+          <p>{{ movie.cast }}</p>
+        </div>
+
+        <div class="synopsis">
+          <p>{{ movie.synopsis}}</p>
+        </div>
+
+        <div class="cinema">     
+          
+          {% for theater in theaters %}
+          <div class="theater-outer">
+            <div class="theater">
+              <p>{{theater.name}}</p>
+            </div>
+            <div class="address">
+              <p>{{theater.address}}</p>
+            </div>
+            {% for date in theater.seances %}
+            <div class="day">
+              <p>{{ date.date }} </p>
+            </div>
+            <div class="row"> 
+              {% for seance in date.timeArr %}
+              <div class="sqr-time-outer">
+                <a href="purchase.php?id={{ seance.id }}&theater={{ theater.id }}">
+                  <div class="sqr-time">
+                    
+                    {{ seance.getTime }}
+                    
+                  </div> 
+                </a>
+              </div>
+              
+              {% endfor %}
+	    </div>
+            
+            {% endfor %}
+	  </div> 
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

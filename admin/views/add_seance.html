@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="col-md-10 content">
+  <div class="page-title-outer">
+    <div class="page-title-inner">
+      <h1>Добавление сеанса</h1>
+    </div>
+  </div>
+  
+  <div class="form-outer">
+    <div class="form-title">
+      Добавить сеанс
+    </div>
+    <form action="includes/add_item.php" method="POST">
+      <input type="hidden" value="seances" name="table">
+
+      <div>
+        <label for="movie_id">Фильм</label>
+        <select name="movie_id" class="select-form"> 
+          {% for item in movies %}
+          <option value="{{ item.id }}" >{{ item.title }}</option>
+          {% endfor %}     
+        </select> 
+      </div>
+      <div>
+        <label for="hall_id">Зал</label>
+        <select name="hall_id" class="select-form"> 
+          {% for item in halls %}
+          <option value="{{ item.id }}" >{{ item.id }}</option>
+          {% endfor %}      
+        </select> 
+      </div>
+      <div class="form-item">
+        <label for="showtime">Время показа</label>
+        <input class="form-inner" type="text" name="showtime" value="" required=""
+               placeholder="1997-01-12 15:35:12" pattern="^[1-2][0-9]{3}-[0-1][0-9]-[0-9]{2} [0-2][0-9]:[0-6][0-9]:[0-6][0-9]$" />
+      </div>
+      <div class="form-item">
+        <label for="charge">Цена</label>
+        <input class="form-inner" type="number" name="charge" required="" />
+      </div>
+      <button id="valid" class="button-form" type="submit">Добавить</button>
+    </form>
+  </div>
+  
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+
+<!-- Validation -->
+
+<script src="js/validation.js"></script>
+
+
+{% endblock %}
