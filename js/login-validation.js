@@ -5,7 +5,7 @@ $('document').ready(function(){
 	  var password = $('#password').val();
 
 	  $.ajax({
-	    url: 'process-login.php',
+	    url: 'includes/process-login.php',
 	    type: 'post',
 	    data: {
 	      'save' : 1,
@@ -14,7 +14,7 @@ $('document').ready(function(){
 	    },
 	    success: function(response){
 	      if(response != '')
-	      	window.location.href = "index.php"
+	      	window.location.href = "../index.php"
 	      else{
 	      	$('#error_msg').text('Неверное имя пользователя или пароль');
 	      }

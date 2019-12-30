@@ -42,12 +42,12 @@ if (isset($_POST['save'])) {
     $results = mysqli_query($con, $sql);
       
     if(mysqli_num_rows($results) > 0) {
-        echo "exists";	
-        else{
-            $pass = md5($password);
-            $sql = "insert into users(login, password, contact_number) values ('$username', '$pass', $phone)";
-            $results = mysqli_query($con, $sql);
-            echo 'Saved!';
-            exit();
-    	}
+        echo "exists";}
+    else{
+        $pass = md5($password);
+        $sql = "insert into users(login, password, contact_number) values ('$username', '$pass', $phone)";
+        $results = mysqli_query($con, $sql);
+        echo 'Saved!';
+        exit();
     }
+}
