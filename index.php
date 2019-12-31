@@ -7,5 +7,4 @@ $arr = array();
 while($item = mysqli_fetch_array($movies)){
     array_push($arr,$item);
 }
-
 echo $template->render(['movies' => $movies, 'user' => $user, 'title' => 'Кино']);

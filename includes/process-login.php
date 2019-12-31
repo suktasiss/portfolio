@@ -20,7 +20,7 @@ if (isset($_POST['save'])) {
         $_SESSION['id'] = $userId;
             
         mysqli_query($con,"insert into user_history(user_id,event) values($userId,'login')");
-        header('Location: ../index.php');
+        header('location:../index.php');
     }
     else{
         exit();
