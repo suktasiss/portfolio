@@ -1,4 +1,6 @@
 <?php 
+// скрипт отвечает за вход пользователя в систему
+
 require_once 'config.php';
 require_once 'regexp.php';
 
@@ -26,4 +28,3 @@ if (isset($_POST['save'])) {
         exit();
     }
 }
-?>
