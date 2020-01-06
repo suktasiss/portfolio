@@ -1,6 +1,7 @@
 <?php
 
 // Скрипт отвечает за авторизацию пользователя
+
 session_start();
 require_once 'config.php';
 require_once 'regexp.php';

@@ -2,7 +2,6 @@
 
 // Скрипт отвечает за выход пользователями из системы
 
-
 require_once 'config.php';
 
 session_start();

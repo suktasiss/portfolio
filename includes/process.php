@@ -1,7 +1,13 @@
 <?php 
+// Скрипт проверяет, зарегистрирован ли уже пользователь и отправляет результат в форму регистрации при помощи AJAX
+// В качестве уникальных данных выступают логин и телефон, если логин или телефон уже заняты, пользватель увидит ошибку
+
 require_once 'config.php';
 require_once 'regexp.php';
 
+
+
+// Проверка имени пользователя
 
 if (isset($_POST['username_check'])) {
     $username = $_POST['username'];
@@ -19,6 +25,8 @@ if (isset($_POST['username_check'])) {
     exit();
 }
 
+// Проверка телефона пользователя
+
 if (isset($_POST['phone_check'])) {
     $phone = $_POST['phone'];
     if(!preg_match(phone, $phone))
@@ -31,6 +39,8 @@ if (isset($_POST['phone_check'])) {
     }
     exit();
 }
+
+// Сохранение пользователя в случае если телефон и логин уникальны
 
 if (isset($_POST['save'])) {
     $username = $_POST['username'];
