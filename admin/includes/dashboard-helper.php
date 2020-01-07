@@ -2,8 +2,8 @@
 
 // Функция подсчитывает количество элементов в таблице
 
-function getEntryNumber($table, $con){
-    $countRaw = mysqli_query($con,"select count(*) as total from $table");
-    $data = mysqli_fetch_assoc($countRaw);
+function getEntryNumber($table, $pdo){
+    $countRaw = $pdo->query("select count(*) as total from $table");
+    $data = $countRaw->fetch();
     return $data['total'];
 }

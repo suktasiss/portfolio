@@ -6,4 +6,3 @@ function login_check()
 		header("Location: index.php");
 	}
 }
-

@@ -1,4 +1,7 @@
 <?php
+
+// Скрипт инициализирует шаблонизатор
+
 require_once '../vendor/autoload.php';
 require_once 'config.php';
 require_once 'login-check.php';
@@ -17,6 +20,3 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] !=""){
     $admin = $_SESSION['admin'];
     $flag = true;
 }
-
-
-?>

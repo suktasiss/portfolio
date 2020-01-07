@@ -39,12 +39,12 @@ class Seances
 
     /* Осуществляет запрос к БД и получает сеансы по нужному фильму в выбранном кинотеатре, возвращает массив сеансов  */
 
-    function constructData($theater_id, $con, $movie_id)
+    function constructData($theater_id, $pdo, $movie_id)
     {
-      $seancesraw=mysqli_query($con,"select * from seances where movie_id=$movie_id and hall_id in(select id from halls where theater_id=$theater_id) order by showtime");
+      $seancesraw = $pdo->query("select * from seances where movie_id=$movie_id and hall_id in(select id from halls where theater_id=$theater_id) order by showtime");
       $datesArr = array();
       $dateObj = null;
-      while($row=mysqli_fetch_array($seancesraw)){          
+      while($row = $seancesraw->fetch()){          
           if(is_null($dateObj)){
             $dateObj = new Seances($row['showtime']);
           }
@@ -61,7 +61,7 @@ class Seances
       return $datesArr;
     }
 
-
+    // Инцииализирует переменную в формате вывода даты
     
     public function dateCreate()
     {

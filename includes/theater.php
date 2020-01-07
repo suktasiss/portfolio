@@ -23,4 +23,3 @@ class Theater
         array_push($this->seances,$seance);
     }
 }
-?>

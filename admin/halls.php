@@ -1,15 +1,12 @@
 <?php
 require_once 'includes/twig.php';
 
-$items=mysqli_query($con,"select * from halls");
-$arr = array();
-while($item = mysqli_fetch_array($items)){
-    array_push($arr,$item);
-}
+$itemsraw = $pdo->query("select * from halls");
+$arr = $itemsraw->fetchAll();
 
-$theatersraw=mysqli_query($con,"select * from theaters;"); 
+$theatersraw = $pdo->query("select * from theaters;"); 
 $theaters = array();
-while($item = mysqli_fetch_array($theatersraw)){
+while($item = $theatersraw->fetch()){
     $theaters[$item['id']] = $item['name'];
 }
 

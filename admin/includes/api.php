@@ -3,8 +3,8 @@ require_once("config.php");
 
 if ($_POST['id'] && $_POST['table']) {
 
-    $sqlQuery = "delete from " . $_POST['table'] ." WHERE id='" . $_POST['id'] . "';";  
-    mysqli_query($con, $sqlQuery) or die("database error:". mysqli_error($con));    
+    $sql = "delete from " . $_POST['table'] ." WHERE id='" . $_POST['id'] . "';";  
+    $pdo->query($sql);    
     $data = array(
         "message"   => "Record Deleted",    
         "status" => 1
