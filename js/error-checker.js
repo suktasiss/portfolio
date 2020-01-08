@@ -30,7 +30,7 @@ function checkPhone(){
     return;
   }
   $.ajax({
-      url: 'includes/process.php',
+      url: 'includes/register-handler.php',
       type: 'post',
       data: {
         'phone_check' : 1,
@@ -62,7 +62,7 @@ function checkUsername(){
     return;
   }
   $.ajax({
-    url: 'includes/process.php',
+    url: 'includes/register-handler.php',
     type: 'post',
     data: {
       'username_check' : 1,
@@ -95,7 +95,7 @@ function checkRegister(){
   }else{
       // proceed with form submission
       $.ajax({
-        url: 'includes/process.php',
+        url: 'includes/register-handler.php',
         type: 'post',
         data: {
           'save' : 1,
