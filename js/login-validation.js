@@ -1,3 +1,5 @@
+// AJAX функция проверяет, правильно ли введено имя пользователя и пароль
+
 $('document').ready(function(){
 
     $('#log_btn').on('click', function(){

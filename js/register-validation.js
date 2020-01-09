@@ -1,3 +1,5 @@
+// AJAX функция, проверяет, правильно ли введены данные для регистрации и заняты ли имя пользователя и телефон
+
 $('document').ready(function(){
   
   $('#username_register').on('blur', checkUsername);		
