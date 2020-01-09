@@ -1,3 +1,5 @@
+// AJAX функция позволяющая редактировать таблицу
+
 $( document ).ready(function() {
     $('#editableTable').SetEditable({
 	onBeforeDelete: function(columnsEd) {
