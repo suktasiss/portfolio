@@ -1,5 +1,8 @@
 <?php
-require_once("config.php");
+
+// Скрипт отвечает за удаление столбцов из таблицы
+
+require_once("../../includes/config.php");
 
 if ($_POST['id'] && $_POST['table']) {
 

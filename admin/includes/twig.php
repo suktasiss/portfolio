@@ -3,7 +3,7 @@
 // Скрипт инициализирует шаблонизатор
 
 require_once '../vendor/autoload.php';
-require_once 'config.php';
+require_once '../includes/config.php';
 require_once 'login-check.php';
 
 session_start();

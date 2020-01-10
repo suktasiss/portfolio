@@ -3,7 +3,7 @@
 // Скрипт отвечает за авторизацию администратора
 
 session_start();
-require_once 'config.php';
+require_once '../../includes/config.php';
 require_once '../../vendor/autoload.php';
 
 extract($_POST);
