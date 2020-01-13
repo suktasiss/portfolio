@@ -4,7 +4,6 @@
 
 function login_check($reverse)
 {
-    
 	if(isset($_SESSION['user']) && strlen($_SESSION['user'])!=0 && !$reverse)
 		header("Location: index.php");
 	if((!isset($_SESSION['user']) || strlen($_SESSION['user'])==0) && $reverse)

@@ -1,9 +1,8 @@
 <?php
 
 require_once '../app/routing/Routing.php';
+require_once '../app/autoload/autoload.php';
 
-spl_autoload_register(function (string $className) {
-    require_once __DIR__ . '/../app/' . $className . '.php';
-});
+error_reporting(0);
 
 $obj = new Routing();

@@ -13,11 +13,10 @@ class Twig {
     
     public function __construct()
     {
-
         $loader = new \Twig\Loader\FilesystemLoader(__DIR__ .'/../../views');
         $this->twig = new \Twig\Environment($loader, [
             'cache' => __DIR__ . '/../../cache',
-            'auto_reload' => true]);
+            'auto_reload' => false]);
 
     }
 

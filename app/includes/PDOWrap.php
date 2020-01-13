@@ -9,10 +9,10 @@ class PDOWrap
     
     public function __construct()
     {        
-        $db_server = '';		// Server name
-        $db_user = ''; 	   		// DB user name
-        $db_pass = ''; 		// DB user pass
-        $db_name = ''; 				// DB NAME
+        $db_server = 'localhost';		// Server name
+        $db_user = 'johan'; 	   		// DB user name
+        $db_pass = 'ullarium1'; 		// DB user pass
+        $db_name = 'mbs'; 				// DB NAME
 
 
         // PDO начало
