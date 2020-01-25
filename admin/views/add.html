@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="col-md-10 content">
+  <div class="page-title-outer">
+    <div class="page-title-inner">
+      <h1>{{ title }}</h1>
+    </div>
+  </div>
+  
+  {% block inner %}
+
+  {% endblock %}
+  
+</div>
+
+<!-- Validation -->
+
+<script src="js/validation.js"></script>
+</script>
+
+
+{% endblock %}

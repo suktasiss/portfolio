@@ -1,59 +1,35 @@
-{% extends "base.html" %}
+{% extends "display.html" %}
 
-{% block content %}
-
-
-<a hidden id="table">movies</a>
+{% block inner %}
 
 
-<div class="col-md-10 content">
-  <div class="page-title-outer">
-    <div class="page-title-inner">
-      <h1>Фильмы</h1>
-    </div>
-  </div>
-  
-  <div class="table-outer">
-    <table id="editableTable" class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Название</th>
-          <th>Возраст</th>
-          <th>Актёры</th>
-          <th>Постер</th>
-          <th>Категория</th>
-          <th>Дата релиза</th>                          
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in items %}
-        <tr id="{{ item.id }}">
-          <td>{{ item.id }}</td>
-          <td>{{ item.title }}</td>
-          <td>{{ item.age }}</td>
-          <td>{{ item.cast }}</td>
-          <td>{{ item.poster }}</td>
-          <td>{{ item.categories }}</td>
-          <td>{{ item.release_date }}</td>                               
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+<div class="table-outer">
+  <table id="editableTable" class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Название</th>
+        <th>Возраст</th>
+        <th>Актёры</th>
+        <th>Постер</th>
+        <th>Категория</th>
+        <th>Дата релиза</th>                          
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr id="{{ item.id }}">
+        <td>{{ item.id }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.cast }}</td>
+        <td>{{ item.poster }}</td>
+        <td>{{ item.categories }}</td>
+        <td>{{ item.release_date }}</td>                               
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
-
-
-{% endblock %}
-
-{% block js %}
-
-<!-- Editable -->
-
-<script src="js/editable.js"></script>
-<script src="plugin/bootstable.js"></script>
-
-
-</script>
 
 {% endblock %}

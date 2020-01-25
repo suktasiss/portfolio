@@ -1,14 +1,7 @@
-{% extends "base.html" %}
+{% extends "add.html" %}
 
-{% block content %}
+{% block inner %}
 
-
-<div class="col-md-10 content">
-  <div class="page-title-outer">
-    <div class="page-title-inner">
-      <h1>Добавление фильма</h1>
-    </div>
-  </div>
   
   <div class="form-outer">
     <div class="form-title">
@@ -47,22 +40,7 @@
       </div>
       <button id="valid" class="button-form" type="submit">Добавить</button>
     </form>
-  </div>
   
 </div>
-
-
-
-{% endblock %}
-
-{% block js %}
-
-
-<!-- Validation -->
-
-<script src="js/validation.js"></script>
-
-</script>
-
 
 {% endblock %}

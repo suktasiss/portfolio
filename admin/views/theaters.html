@@ -1,55 +1,31 @@
-{% extends "base.html" %}
+{% extends "display.html" %}
 
-{% block content %}
-
+{% block inner %}
 
 <a hidden id="table">theaters</a>
 
-<div class="col-md-10 content">
-  <div class="page-title-outer">
-    <div class="page-title-inner">
-      <h1>Кинотеатры</h1>
-    </div>
-  </div>
-  
-  <div class="table-outer">
-    <table id="editableTable" class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Название</th>
-          <th>Адрес</th>
-          <th>Контактный номер</th>                        
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in items %}
-        <tr id="{{ item.id }}">
-          <td>{{ item.id }}</td>
-          <td>{{ item.name  }}</td>
-          <td>{{ item.address }}</td>
-          <td>{{ item.contact_number }}</td>                         
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+
+<div class="table-outer">
+  <table id="editableTable" class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Название</th>
+        <th>Адрес</th>
+        <th>Контактный номер</th>                        
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr id="{{ item.id }}">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name  }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.contact_number }}</td>                         
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
-
-{% endblock %}
-
-{% block js %}
-
-
-
-
-
-<!-- Editable -->
-
-<script src="js/editable.js"></script>
-<script src="plugin/bootstable.js"></script>
-
-
-</script>
 
 {% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a hidden id="table">{{ tablename }}</a>
+
+
+<div class="col-md-10 content">
+  <div class="page-title-outer">
+    <div class="page-title-inner">
+      <h1>{{ title }}</h1>
+    </div>
+  </div>
+
+
+  {% block inner %}
+
+  {% endblock %}
+
+</div>
+
+
+<!-- Editable -->
+
+<script src="js/editable.js"></script>
+<script src="plugin/bootstable.js"></script>
+
+
+</script>
+
+{% endblock %}

@@ -1,58 +1,33 @@
-{% extends "base.html" %}
+{% extends "display.html" %}
 
-{% block content %}
+{% block inner %}
 
-<a hidden id="table">seances</a>
 
-<div class="col-md-10 content">
-  <div class="page-title-outer">
-    <div class="page-title-inner">
-      <h1>Сеансы</h1>
-    </div>
-  </div>
-  
-  <div class="table-outer">
-    <table id="editableTable" class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Фильм</th>
-          <th>id Зала</th>
-          <th>Время показа</th>    
-          <th>Цена</th>
-          <th>Свободные места</th>                    
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in items %}
-        <tr id="{{ item.id }}">
-          <td>{{ item.id }}</td>
-          <td>{{ movies[item.movie_id] }}</td>
-          <td>{{ item.hall_id }}</td>
-          <td>{{ item.showtime }}</td>   
-          <td>{{ item.charge }}</td>
-          <td>{{ item.free_space }}</td>                        
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+<div class="table-outer">
+  <table id="editableTable" class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Фильм</th>
+        <th>id Зала</th>
+        <th>Время показа</th>    
+        <th>Цена</th>
+        <th>Свободные места</th>                    
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr id="{{ item.id }}">
+        <td>{{ item.id }}</td>
+        <td>{{ movies[item.movie_id] }}</td>
+        <td>{{ item.hall_id }}</td>
+        <td>{{ item.showtime }}</td>   
+        <td>{{ item.charge }}</td>
+        <td>{{ item.free_space }}</td>                        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
-
-
-
-{% endblock %}
-
-{% block js %}
-
-
-
-<!-- Editable -->
-
-<script src="js/editable.js"></script>
-<script src="plugin/bootstable.js"></script>
-
-
-</script>
 
 {% endblock %}

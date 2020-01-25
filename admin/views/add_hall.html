@@ -1,58 +1,36 @@
-{% extends "base.html" %}
+{% extends "add.html" %}
 
-{% block content %}
+{% block inner %}
 
-
-<div class="col-md-10 content">
-  <div class="page-title-outer">
-    <div class="page-title-inner">
-      <h1>Добавление зала</h1>
-    </div>
+<div class="form-outer">
+  <div class="form-title">
+    Добавить Зал
   </div>
-  
-  <div class="form-outer">
-    <div class="form-title">
-      Добавить Зал
+
+  <form action="../app/includes/add_item.php" method="POST">
+    <input type="hidden" value="halls" name="table">
+
+    <div>
+      <label for="theater_id">Кинотеатр</label>
+      <select name="theater_id" class="select-form"> 
+        {% for item in items %}
+	<option value="{{ item.id }}" >{{ item.name }}</option>
+        {% endfor %}         
+      </select> 
     </div>
 
-    <form action="../app/includes/add_item.php" method="POST">
-      <input type="hidden" value="halls" name="table">
-
-      <div>
-        <label for="theater_id">Кинотеатр</label>
-        <select name="theater_id" class="select-form"> 
-          {% for item in items %}
-	  <option value="{{ item.id }}" >{{ item.name }}</option>
-          {% endfor %}         
-        </select> 
-      </div>
-
-      <div class="form-item">
-        <label for="number">Номер зала</label>
-        <input class="form-inner" type="number" name="number" value="" required="" />
-      </div>
-      
-      <div class="form-item">
-        <label for="showtime">Вместительность</label>
-        <input class="form-inner" type="number" name="capacity" value="" required=""
-	       />
-      </div>
-      <button id="valid" class="button-form" type="submit">Добавить</button>
-    </form>
-  </div>
-  
+    <div class="form-item">
+      <label for="number">Номер зала</label>
+      <input class="form-inner" type="number" name="number" value="" required="" />
+    </div>
+    
+    <div class="form-item">
+      <label for="showtime">Вместительность</label>
+      <input class="form-inner" type="number" name="capacity" value="" required=""
+	     />
+    </div>
+    <button id="valid" class="button-form" type="submit">Добавить</button>
+  </form>
 </div>
-
-{% endblock %}
-
-{% block js %}
-
-
-
-
-<!-- Validation -->
-
-<script src="js/validation.js"></script>
-</script>
 
 {% endblock %}
