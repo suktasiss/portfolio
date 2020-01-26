@@ -3,7 +3,8 @@
 require_once 'includes/Twig.php';
 
 
-class AddHallController extends Base{
+class AddHallController extends Base
+{
 
     public $twig;
     public $theaters;
@@ -15,6 +16,7 @@ class AddHallController extends Base{
 
         $PDOWrap = new PDOWrap();
         $pdo = $PDOWrap->getPDO();
+
         
         $itemsraw = $pdo->query("select * from theaters");
         $this->theaters = $itemsraw->fetchAll();        

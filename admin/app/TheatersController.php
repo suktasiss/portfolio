@@ -2,7 +2,8 @@
 require_once 'includes/Twig.php';
 
 
-class TheatersController extends Base{
+class TheatersController extends Base
+{
 
     public $twig;
     public $theaters;
@@ -13,8 +14,11 @@ class TheatersController extends Base{
 
         $PDOWrap = new PDOWrap();
         $pdo = $PDOWrap->getPDO();
-        
-        $theatersraw = $pdo->query("select * from theaters");
+
+        $numb = isset($_GET['numb']) ? $_GET['numb'] : 0;
+        $page = new Pager(Base::PAGES_NUMBER,$numb);
+
+        $theatersraw = $pdo->query("select * from theaters limit $page->start, $page->limit");
         $this->theaters = $theatersraw->fetchAll();
     }
 

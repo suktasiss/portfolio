@@ -3,7 +3,8 @@
 require_once 'includes/Twig.php';
 
 
-class IndexController extends Base{
+class IndexController extends Base
+{
 
     
     public $twig;

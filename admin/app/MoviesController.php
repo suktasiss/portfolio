@@ -2,7 +2,8 @@
 require_once 'includes/Twig.php';
 
 
-class MoviesController extends Base{
+class MoviesController extends Base
+{
 
     public $twig;
     public $movies;
@@ -14,8 +15,11 @@ class MoviesController extends Base{
 
         $PDOWrap = new PDOWrap();
         $pdo = $PDOWrap->getPDO();
+
+        $numb = isset($_GET['numb']) ? $_GET['numb'] : 0;
+        $page = new Pager(Base::PAGES_NUMBER,$numb);
         
-        $moviesraw = $pdo->query("select * from movies");
+        $moviesraw = $pdo->query("select * from movies limit $page->start, $page->limit");
         $this->movies = $moviesraw->fetchAll();
     }
 

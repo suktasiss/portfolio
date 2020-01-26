@@ -2,7 +2,8 @@
 require_once 'includes/Twig.php';
 
 
-class HallsController extends Base{
+class HallsController extends Base
+{
 
     public $twig;
     public $theaters;
@@ -14,8 +15,11 @@ class HallsController extends Base{
 
         $PDOWrap = new PDOWrap();
         $pdo = $PDOWrap->getPDO();
+
+        $numb = isset($_GET['numb']) ? $_GET['numb'] : 0;
+        $page = new Pager(Base::PAGES_NUMBER,$numb);
         
-        $hallsraw = $pdo->query("select * from halls order by theater_id, id");
+        $hallsraw = $pdo->query("select * from halls order by theater_id, id LIMIT $page->start, $page->limit");
         $this->halls = $hallsraw->fetchAll();
 
         $theatersraw = $pdo->query("select * from theaters;"); 

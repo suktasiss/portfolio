@@ -3,7 +3,8 @@
 require_once 'includes/Twig.php';
 
 
-class AddSeanceController extends Base{
+class AddSeanceController extends Base
+{
 
     public $twig;
     public $halls;

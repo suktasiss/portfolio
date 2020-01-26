@@ -2,8 +2,9 @@
 
 abstract class Base{
 
-
-    
+    // Number of items in page
+    const PAGES_NUMBER = 10;
+        
     public abstract function __construct();
     abstract public function draw();
 

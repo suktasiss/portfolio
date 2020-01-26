@@ -3,7 +3,8 @@
 require_once 'includes/Twig.php';
 
 
-class AddMovieController extends Base{
+class AddMovieController extends Base
+{
 
     public $twig;
     public $theaters;

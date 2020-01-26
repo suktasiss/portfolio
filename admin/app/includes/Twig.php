@@ -4,6 +4,7 @@
 
 require_once '../../vendor/autoload.php';
 require_once '../../app/includes/PDOWrap.php';
+require_once '../app/includes/Pager.php';
 require_once 'login-check.php';
 
 

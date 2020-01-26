@@ -2,7 +2,8 @@
 require_once 'includes/Twig.php';
 
 
-class SeancesController extends Base{
+class SeancesController extends Base
+{
 
     public $twig;
     public $movies;
@@ -14,8 +15,11 @@ class SeancesController extends Base{
 
         $PDOWrap = new PDOWrap();
         $pdo = $PDOWrap->getPDO();
+
+        $numb = isset($_GET['numb']) ? $_GET['numb'] : 0;
+        $page = new Pager(Base::PAGES_NUMBER,$numb);
         
-        $seancesraw = $pdo->query("select * from seances");
+        $seancesraw = $pdo->query("select * from seances LIMIT $page->start, $page->limit");
         $this->seances = $seancesraw->fetchAll();
 
         $moviesraw = $pdo->query("select * from movies"); 
